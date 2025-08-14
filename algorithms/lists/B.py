@@ -47,18 +47,22 @@ if LOCAL:
 def solution(node, idx):
     # Напишите код функции здесь.
     # ヽ(´▽`)/
+
+    # Обработка удаления головы списка (индекс 0): Если нужно удалить первый элемент, просто возвращаем второй элемент как новую голову
     if idx == 0:
         return node.next_item 
 
+    # Поиск элемента перед удаляемым: Проходим по списку до элемента, который находится перед удаляемым
     temp_node = node
     for i in range(idx - 1):
         temp_node = temp_node.next_item 
         if temp_node is None:
             return node
-    
+    # Удаление элемента: Пропускаем удаляемый элемент, перенаправляя ссылку next_item на следующий элемент
     if temp_node.next_item is not None:
         temp_node.next_item = temp_node.next_item.next_item
     
+    # Возврат головы списка: Возвращаем исходную голову, так как она не изменилась (кроме случая удаления головы)
     return node
 
 
