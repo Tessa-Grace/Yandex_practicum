@@ -30,6 +30,21 @@ def main():
     1
     """
 
+    data = input().strip()
+    seen = set() # Множество для хранения символов текущего окна
+    left = 0 # Левый указатель
+    max_len = 0 # Максимальная длина подстроки
+
+    for right in range(len(data)):
+        # Если символ уже в окне, двигаем left вправо, удаляя символы из seen, пока дубликат не исчезнет.
+        while data[right] in seen:
+            seen.remove(data[left])
+            left += 1
+        # Добавляем текущий символ в окно
+        seen.add(data[right])
+        # Обновляем максимальную длину
+        max_len = max(max_len, right - left + 1)
+    print(max_len)
     
 
 if __name__ == '__main__':
