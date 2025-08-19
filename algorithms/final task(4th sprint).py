@@ -1,5 +1,6 @@
 def platforms_for_robots(weight: list[int], limit: int) -> int:
     """
+    ID 141326923
     https://contest.yandex.ru/contest/52720/problems/A/
     A. Служба доставки
     Функция для определения минимального количества транспортных платформ,
