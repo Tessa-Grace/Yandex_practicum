@@ -35,14 +35,14 @@ def platforms_for_robots(weight: list[int], limit: int) -> int:
     3
     """
 
-    weight.sort()
+    sorted_weight = sorted(weight)
 
     platform_count: int = 0
     left: int = 0
-    right: int = len(weight) - 1
+    right: int = len(sorted_weight) - 1
 
     while left <= right:
-        if weight[left] + weight[right] <= limit:
+        if sorted_weight[left] + sorted_weight[right] <= limit:
             left += 1
         right -= 1
         platform_count += 1
