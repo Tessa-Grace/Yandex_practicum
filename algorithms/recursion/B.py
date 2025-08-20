@@ -66,7 +66,9 @@ def counter(applicants, tacts):
     5
     1
     Вывод
-    5    
+    5  
+
+    * визуализация: https://www.geogebra.org/m/ExvvrBbR  
     """
     
     ans = 0
