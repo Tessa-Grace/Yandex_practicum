@@ -1,16 +1,18 @@
 from string import digits
 
-def encrypted_instructions(data):
+PLACE_VALUE: int = 10
+digits_set: set[str] = set(digits)
+
+def encrypted_instructions(data: str) -> str:
     """
     ID 141456219
     """
     stack: list[tuple[int, str]] = []
     current_str: str = ''
     current_num: int = 0
-    PLACE_VALUE = 10
 
     for item in data:
-        if item in digits:
+        if item in digits_set:
             current_num = current_num * PLACE_VALUE + int(item)
         elif item == '[':
             stack.append((current_num, current_str))
